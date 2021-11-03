@@ -1,27 +1,13 @@
 // const precioOriginal = 120;
 // const descuento = 18;
 
-const coupons = [
-  {
-    code: "CARLOS",
-    discount: 15
-  },
-  {
-    code: "SOYCARLOSELMEJOR",
-    discount: 30
-  },
-  {
-    code: "SOYCARLOS",
-    discount: 25
-  }
-];
 
 
 
 function calcularPrecioConDescuento(precio, descuento){
   const porcentajePrecioConDescuento = 100 - descuento;
   const PrecioConDescuento = (precio * porcentajePrecioConDescuento) / 100;
-
+  
   return PrecioConDescuento;
 }
 
@@ -38,9 +24,26 @@ function onClickButtonPriceDiscount(){
   
   const resultP = document.getElementById("ResultP");
   
-  return resultP.innerText = "El precio con descuento son $" + precioDescuento;
-}
+  return resultP.innerText = `El precio con descuento es: $${precioDescuento}`
+} 
 
+
+
+// COUPONS //
+const coupons = [
+  {
+    code: "CARLOS",
+    discount: 15
+  },
+  {
+    code: "SOYCARLOSELMEJOR",
+    discount: 30
+  },
+  {
+    code: "SOYCARLOS",
+    discount: 25
+  }
+];
 
 function onClickButtonCouponDiscount(){
   
@@ -54,7 +57,7 @@ function onClickButtonCouponDiscount(){
       return element.code === inputCouponValue;
   });
   
-  const buscarBoolean = coupons.some((element)=> {
+  const buscarBoolean = coupons.some((element) => {
     return element.code === inputCouponValue
   });
 
@@ -66,10 +69,9 @@ function onClickButtonCouponDiscount(){
 
      const precioDescuento = calcularPrecioConDescuento(priceValue, cupon);
      
-     return resultP.innerText = "El descuento es del " 
-     + buscarCoupon.discount + "%\n" 
-     + "El precio con descuento son $" 
-     + precioDescuento;
+    return resultP.innerText = `El descuento es del ${buscarCoupon.discount}
+    El precio con descuento son $${precioDescuento}`
+
   }
   else if(buscarBoolean == false) 
   {
