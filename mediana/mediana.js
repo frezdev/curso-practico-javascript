@@ -1,9 +1,8 @@
-function calcularMediaAritmetica(lista)
+function calcularPromedio(lista)
 {
 
   const sumaLista = lista.reduce(
-    function (valorAcumulado = 0, nuevoElemento)
-    {
+    (valorAcumulado = 0, nuevoElemento) => {
       return valorAcumulado + nuevoElemento;
     }
   );
@@ -43,7 +42,7 @@ if (esPar(lista1.length)) {
   const elemento1 = lista1[mitadLista1 - 1];
   const elemento2 = lista1[mitadLista1];
 
-  const promedioElemento1y2 = calcularMediaAritmetica([
+  const promedioElemento1y2 = calcularPromedio([
     elemento1,
     elemento2
   ]);
