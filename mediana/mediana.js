@@ -52,6 +52,7 @@ let mediana;
 function calcular() {
   
   const mitadLista = parseInt(lista.length / 2);
+  const resul = document.getElementById('print');
   
   if (esPar(lista.length)) {
     const elemento1 = lista[mitadLista - 1];
@@ -69,5 +70,5 @@ function calcular() {
   }
   
   console.log(lista);
-  alert(mediana);
+  resul.innerText = (`La mediana es: ${mediana}`);
 }
