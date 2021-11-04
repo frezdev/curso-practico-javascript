@@ -13,19 +13,30 @@ function calcularPromedio(lista)
 }
 
 
-const lista1 = [
-  100,
-  200,
-  500,
-  400000000
-];
+const lista = [];
 
-const mitadLista1 = parseInt(lista1.length / 2);
+function pushArray() {
+  const input = document.getElementById("inpuPromedio");
+  const value = Number(input.value);
+  console.log(value)
+  const elements = lista;
+  
+  elements.push(value);
+  
+  elements.sort((a, b) => a - b);
+  
+  console.log(elements);
+  return elements;
+}
 
-function esPar(numerito) 
-{
 
-  if (numerito % 2 === 0) 
+console.log(lista);
+
+
+
+function esPar(numerito) {
+
+  if (numerito % 2 === 0)
   {
     return true;
   }
@@ -38,18 +49,25 @@ function esPar(numerito)
 
 let mediana;
 
-if (esPar(lista1.length)) {
-  const elemento1 = lista1[mitadLista1 - 1];
-  const elemento2 = lista1[mitadLista1];
-
-  const promedioElemento1y2 = calcularPromedio([
-    elemento1,
-    elemento2
-  ]);
-
-  mediana = promedioElemento1y2;
-}
-else
-{
-  mediana = lista1[mitadLista1];
+function calcular() {
+  
+  const mitadLista = parseInt(lista.length / 2);
+  
+  if (esPar(lista.length)) {
+    const elemento1 = lista[mitadLista - 1];
+    const elemento2 = lista[mitadLista];
+  
+    const promedioElemento1y2 = calcularPromedio([
+      elemento1,
+      elemento2
+    ]);
+  
+    mediana = promedioElemento1y2;
+  }
+  else {
+    mediana = lista[mitadLista];
+  }
+  
+  console.log(lista);
+  alert(mediana);
 }

@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Mediana</title>
-  </head>
-  <body>
-    <h1>Mediana</h1>
-    <script src="./mediana.js">
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mediana</title>
+</head>
+<body>
+  <h1>Calcula la mediana</h1>
+  <p id="print"></p>
+
+  <form action="">
+    <label for="inpuPromedio">
+      introduce un numero a la vez
+      <input type="number" id="inpuPromedio">
+    </label>
+    
+    <button type="reset" onclick="pushArray()">Enviar</button>
+    <button type="button" onclick="calcular()">Calcular mediana</button>
+  </form>
+
+  <script src="./mediana.js"></script>
+</body>
 </html>
