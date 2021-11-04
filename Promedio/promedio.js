@@ -3,30 +3,31 @@ const lista = [];
 function pushArray() {
   const input = document.getElementById("inpuPromedio");
   const value = Number(input.value);
+  console.log(value)
   const elements = lista;
   
   elements.push(value);
-  return console.log(elements);
-
+  
+  return elements;
+  // return console.log(elements);
 }
 
+function calcularMediaAritmetica(element){
+  let sumaLista = 0;
 
-console.log(lista);
+  element.forEach(element => sumaLista += element);
 
-function calcularMediaAritmetica(lista){
-
-   const sumaLista = lista.reduce(
-       function (valorAcumulado = 0, nuevoElemento) {
-         return valorAcumulado + nuevoElemento;
-       }
-    );
-    const promedioLista = sumaLista / lista.length;
+  const promedioLista = sumaLista / element.length;
     
-    return promedioLista;
+  return promedioLista;
 }
 
-// function calcular(lista) {
-//   const elements = lista;
-//   const resutlt = calcularMediaAritmetica(elements);
-//   return console.log(resutlt);
-// }
+function calcular() {
+
+  const result = calcularMediaAritmetica(lista);
+  const imprimir = document.getElementById("print");
+
+  return imprimir.innerText = (`El promedio es: ${result}`);
+
+}
+

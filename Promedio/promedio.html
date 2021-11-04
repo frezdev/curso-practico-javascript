@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Promedio</title>
-  </head>
-  <body>
-    <h1>Promedio</h1>
-    <p>Conoce el promedio</p>
-    <form action="">
-      <label for="inpuPromedio">
-        <input type="number" id="inpuPromedio">
-      </label>
-      <button type="button" onclick="pushArray()">Enviar</button>
-      <button type="button" onclick="calcularMediaAritmetica()">Calcular promedio</button>
-    </form>
-    <script src="./promedio.js">
-    </script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promedio</title>
+</head>
+<body>
+  <h1>Calcula el promedio</h1>
+  <p id="print"></p>
+
+  <form action="">
+    <label for="inpuPromedio">
+      <input type="number" id="inpuPromedio">
+      <button type="reset" onclick="pushArray()">Enviar</button>
+    </label>
+
+    <button type="button" onclick="calcular()">Calcular promedio</button>
+  </form>
+
+  <script src="./promedio.js"></script>
+</body>
 </html>
