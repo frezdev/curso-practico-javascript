@@ -1,39 +1,43 @@
-const lista1 = [
-  1,
-  2,
-  3,
-  1,
-  2,
-  3,
-  4,
-  2,
-  2,
-  2,
-  1
-];
+const list = [];
 
-const lista1Count = {};
+function pushArray() {
+  const input = document.getElementById("inpuPromedio");
+  const value = Number(input.value);
+  console.log(value)
+  const elements = list;
+  
+  elements.push(value);
+  
+  return elements;
+}
 
-lista1.map(
-  function(elemento)
-  {
-    if (lista1Count[elemento])
+const listCount = {};
+
+function calcular() {
+  
+  list.map(
+    function(elemento)
     {
-      lista1Count[elemento] += 1;
+      if (listCount[elemento])
+      {
+        listCount[elemento] += 1;
+      }
+      else
+      {
+        listCount[elemento] = 1;
+      }
+      
     }
-    else
-    {
-      lista1Count[elemento] = 1;
+  );
+  
+  const listArray = Object.entries(listCount).sort(
+    function (elementoA, elementoB){
+      return elementoA[1] - elementoB[1];
     }
-    
-  }
-);
-
-const lista1Array = Object.entries(lista1Count).sort(
-  function (elementoA, elementoB){
-    return elementoA[1] - elementoB[1];
-  }
-);
-
-const moda = lista1Array[lista1Array.length - 1];
-
+  );
+  const imprimir = document.getElementById("print");
+  const moda = listArray[listArray.length - 1][0];
+  
+  console.log(moda);
+  return imprimir.innerText = (`La moda es: ${moda}`);
+}
